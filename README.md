@@ -1,6 +1,6 @@
 # Web Development Project 1 — Super Fights
 
-**Super Fights** is a personal ranking of six Dragon Ball Super fights, including Dragon Ball Super: Broly. Visitors browse the cards and open a fight to read its standout moment, outcome, and ranking explanation.
+**Super Fights** is a personal ranking of six Dragon Ball Super fights, including Dragon Ball Super: Broly. Goku vs. Kefla leads the ranking. Visitors browse the cards and open a fight to read its standout moment, outcome, and ranking explanation.
 
 ## Required Features
 
@@ -33,7 +33,7 @@ npm start
 
 Open http://localhost:3000. During development, use `npm run dev` to restart the server automatically after edits. Set the `PORT` environment variable if port 3000 is already in use.
 
-Pico CSS is served from the installed package, so the app needs no external stylesheets, fonts, or images at runtime.
+Pico CSS is served locally. Fight snapshots load from Toei Animation and YouTube; embedded YouTube videos require internet access. Each video includes a direct YouTube link if embedding or regional availability prevents playback. Videos are labeled as highlights, clips, or previews; they are not all full fights.
 
 ## Project structure
 
@@ -60,7 +60,7 @@ Example: `/fights/goku-vs-jiren`.
 
 ## Data and customization
 
-Edit `data/fights.js` to change the ranking or descriptions. Every record uses the same fields: `id`, `slug`, `rank`, `title`, `fighters`, `arc`, `format`, `location`, `spotlight`, `description`, `standoutMoment`, `whyItRanks`, `outcome`, and `source`.
+Edit `data/fights.js` to change the ranking or descriptions. Every record uses the same fields: `id`, `slug`, `rank`, `title`, `fighters`, `arc`, `format`, `location`, `spotlight`, `description`, `standoutMoment`, `whyItRanks`, `outcome`, `source`, `coverImage`, `coverAlt`, `coverSource`, `videoId`, `videoChannel`, and `videoLabel`.
 
 The app currently stores data in a JavaScript array; it does not claim to have a database. The browser loads that data through Express. DOM text is inserted with `textContent` rather than interpreted as HTML.
 
@@ -88,3 +88,11 @@ Also verified in a real Chromium browser: all six rendered cards and detail page
 - [Dragon Ball Super: Broly plot](https://en.wikipedia.org/wiki/Dragon_Ball_Super:_Broly)
 
 Fight commentary is original; story references are linked on each detail page.
+
+## Fight media
+
+Each detail page credits its cover image and video uploader. Five covers are actual episode stills from Toei Animation’s episode pages; the Gogeta cover is a battle still from Bandai Namco’s official preview. Media remains hosted by the original providers. The old `/fights/vegeta-vs-toppo` URL redirects to `/fights/vegeta-vs-top`.
+
+- [x] A fight snapshot appears on each card and detail page.
+- [x] Every detail page has a responsive video player and direct playback link.
+- [x] Goku vs. Kefla is ranked first, and Top uses the requested name.

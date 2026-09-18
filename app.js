@@ -13,6 +13,7 @@ app.get('/vendor/pico.min.css', (_req, res) =>
   res.sendFile(path.join(root, 'node_modules/@picocss/pico/css/pico.min.css')));
 
 app.get('/api/fights', (_req, res) => res.json(fights));
+app.get('/api/fights/vegeta-vs-toppo', (_req, res) => res.redirect(301, '/api/fights/vegeta-vs-top'));
 app.get('/api/fights/:slug', (req, res) => {
   const fight = fights.find(item => item.slug === req.params.slug);
   if (!fight) return res.status(404).json({ error: 'Fight not found' });
@@ -21,6 +22,8 @@ app.get('/api/fights/:slug', (req, res) => {
 app.use('/api', (_req, res) => res.status(404).json({ error: 'Route not found' }));
 
 app.get('/', (_req, res) => res.sendFile(path.join(root, 'pages/index.html')));
+// Keep existing bookmarks working after the name correction.
+app.get('/fights/vegeta-vs-toppo', (_req, res) => res.redirect(301, '/fights/vegeta-vs-top'));
 app.get('/fights/:slug', (req, res, next) => {
   if (!fights.some(item => item.slug === req.params.slug)) return next();
   res.sendFile(path.join(root, 'pages/fight.html'));

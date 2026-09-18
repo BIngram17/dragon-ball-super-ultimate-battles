@@ -12,6 +12,14 @@ test('list, all detail routes, local assets, and real 404 responses', async () =
     assert.match(await home.text(), /SIX FIGHTS/);
     const fights = await (await fetch(`${base}/api/fights`)).json();
     assert.equal(fights.length, 6);
+    assert.equal(fights[0].slug, 'goku-vs-kefla');
+    assert.deepEqual(fights.map(f => f.rank), [1, 2, 3, 4, 5, 6]);
+    assert.equal(fights.find(f => f.id === 5).title, 'Vegeta vs. Top');
+    for (const path of ['/fights/vegeta-vs-toppo', '/api/fights/vegeta-vs-toppo']) {
+      const redirect = await fetch(base + path, { redirect: 'manual' });
+      assert.equal(redirect.status, 301);
+      assert.equal(redirect.headers.get('location'), path.replace('toppo', 'top'));
+    }
     assert.equal(new Set(fights.map(f => f.slug)).size, 6);
     for (const fight of fights) {
       assert.equal((await fetch(`${base}/fights/${fight.slug}`)).status, 200);

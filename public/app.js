@@ -16,6 +16,36 @@ function link(href, text, className) {
 }
 function rank(number) { return String(number).padStart(2, '0'); }
 
+function coverImage(fight, className) {
+  const image = element('img', className);
+  image.src = fight.coverImage;
+  image.alt = fight.coverAlt;
+  image.width = 640;
+  image.height = 360;
+  image.loading = 'lazy';
+  image.addEventListener('error', () => {
+    const fallback = element('p', 'image-unavailable', 'Fight snapshot is temporarily unavailable.');
+    image.replaceWith(fallback);
+  }, { once: true });
+  return image;
+}
+
+function renderVideo(fight) {
+  const section = element('section', 'video-section');
+  section.append(element('h2', '', 'Watch the fight'));
+  const frame = element('iframe', 'fight-video');
+  frame.src = 'https://www.youtube-nocookie.com/embed/' + fight.videoId;
+  frame.title = fight.title + ' — ' + fight.videoLabel;
+  frame.loading = 'lazy';
+  frame.allow = 'accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+  frame.allowFullscreen = true;
+  frame.referrerPolicy = 'strict-origin-when-cross-origin';
+  const caption = element('p', 'video-caption', fight.videoLabel + ' · ' + fight.videoChannel + ' · ');
+  caption.append(link('https://www.youtube.com/watch?v=' + fight.videoId, 'Open on YouTube ↗', 'video-link'));
+  section.append(frame, caption, element('p', 'video-note', 'If playback is unavailable here, open the video on YouTube.'));
+  return section;
+}
+
 function renderCard(fight) {
   const card = element('article', `fight-card card-${fight.rank}`);
   const heading = element('div', 'card-top');
@@ -25,7 +55,7 @@ function renderCard(fight) {
   const footer = element('div', 'card-bottom');
   footer.append(element('span', 'spotlight', fight.spotlight), element('span', 'card-arrow', '↗'));
   footer.lastChild.setAttribute('aria-hidden', 'true');
-  card.append(heading, element('p', 'card-arc', fight.arc), title, element('p', 'card-description', fight.description), footer);
+  card.append(coverImage(fight, 'card-cover'), heading, element('p', 'card-arc', fight.arc), title, element('p', 'card-description', fight.description), footer);
   return card;
 }
 
@@ -33,6 +63,10 @@ function renderDetail(fight) {
   document.title = `${fight.title} — Super Fights`;
   const hero = element('section', 'detail-hero');
   hero.append(element('p', 'eyebrow', `RANK ${rank(fight.rank)} / ${fight.format.toUpperCase()} / SPOILERS`), element('h1', '', fight.title), element('p', 'detail-description', fight.description));
+  const figure = element('figure', 'detail-cover');
+  const caption = element('figcaption', '', fight.coverAlt + ' ');
+  caption.append(link(fight.coverSource, 'Image source ↗'));
+  figure.append(coverImage(fight, 'detail-image'), caption);
   const panel = element('article', 'facts-panel');
   panel.append(element('h2', '', 'The matchup'));
   const facts = element('dl', 'facts');
@@ -50,7 +84,7 @@ function renderDetail(fight) {
   }
   const body = element('div', 'detail-grid');
   body.append(story, panel);
-  detail.append(hero, body, link('/', '← Explore all six fights', 'back-link'));
+  detail.append(hero, figure, renderVideo(fight), body, link('/', '← Explore all six fights', 'back-link'));
 }
 
 async function load() {
