@@ -20,9 +20,8 @@ body { margin: 0; }
 a { text-underline-offset: .25em; }
 a:focus-visible, button:focus-visible { outline: 3px solid #9ed5ff; outline-offset: 6px; }
 .site-header { display: flex; align-items: center; justify-content: space-between; min-height: 94px; border-bottom: 1px solid #283240; gap: 1rem; }
-.brand { display: flex; gap: 10px; align-items: center; font-weight: 900; font-size: 1.1rem; letter-spacing: .045em; color: #f3f5fa; text-decoration: none; }
-.brand-mark { color: #0c1018; background: #ff8a38; padding: 7px 8px; font-style: italic; letter-spacing: -.08em; }
-.brand-dot { color: #ff8a38; margin-left: -8px; }
+.brand { display: inline-flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+.brand-logo { display: block; width: clamp(220px, 26vw, 280px); height: auto; }
 .header-note, .eyebrow, .section-heading span { font-size: .75rem; font-weight: 700; letter-spacing: .12em; }
 .header-note { color: #a0adbf; }
 .intro { padding: 54px 0 34px; margin: 0; }

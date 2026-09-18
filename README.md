@@ -1,6 +1,6 @@
-# Web Development Project 1 — Super Fights
+# Web Development Project 1 — Ultimate Battles
 
-**Super Fights** is a personal ranking of six Dragon Ball Super fights, including Dragon Ball Super: Broly. Goku vs. Kefla leads the ranking. Visitors browse the cards and open a fight to read its standout moment, outcome, and ranking explanation.
+**Ultimate Battles** is a personal ranking of six Dragon Ball Super fights, including Dragon Ball Super: Broly. Goku vs. Kefla leads the ranking. Visitors browse the cards and open a fight to read its standout moment, outcome, and ranking explanation.
 
 ## Required Features
 

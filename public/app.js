@@ -60,7 +60,7 @@ function renderCard(fight) {
 }
 
 function renderDetail(fight) {
-  document.title = `${fight.title} — Super Fights`;
+  document.title = `${fight.title} — Ultimate Battles`;
   const hero = element('section', 'detail-hero');
   hero.append(element('p', 'eyebrow', `RANK ${rank(fight.rank)} / ${fight.format.toUpperCase()} / SPOILERS`), element('h1', '', fight.title), element('p', 'detail-description', fight.description));
   const figure = element('figure', 'detail-cover');
