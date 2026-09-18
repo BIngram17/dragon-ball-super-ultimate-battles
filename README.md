@@ -91,7 +91,7 @@ Fight commentary is original; story references are linked on each detail page.
 
 ## Fight media
 
-Each detail page credits its cover image and video uploader. Five covers are actual episode stills from Toei Animation’s episode pages; the Gogeta cover is a battle still from Bandai Namco’s official preview. Media remains hosted by the original providers. The old `/fights/vegeta-vs-toppo` URL redirects to `/fights/vegeta-vs-top`.
+Each detail page credits its cover image and video uploader. Four covers are episode stills from Toei Animation. The Goku vs. Jiren cover is the selected J1 still from RPP; the Gogeta vs. Broly cover is a user-supplied image stored locally in public/images. Media remains hosted by the original providers. The old `/fights/vegeta-vs-toppo` URL redirects to `/fights/vegeta-vs-top`.
 
 - [x] A fight snapshot appears on each card and detail page.
 - [x] Every detail page has a responsive English-dub video player with in-page playback.
