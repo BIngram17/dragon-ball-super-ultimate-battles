@@ -1,102 +1,78 @@
-# Web Development Project 1 — Ultimate Battles
+# WEB103 Project 1 - *Dragon Ball Super: Ultimate Battles*
 
-**Ultimate Battles** is a personal ranking of six Dragon Ball Super fights, including Dragon Ball Super: Broly. Goku vs. Kefla leads the ranking. Visitors browse the cards and open a fight to read its standout moment, outcome, and ranking explanation.
+Submitted by: **Brian Ingram**
+
+About this web app: **Dragon Ball Super: Ultimate Battles is a fan-made ranking of six memorable fights from the series and Dragon Ball Super: Broly. Browse fight cards with scene snapshots, then open each fight’s own page to explore the fighters, story arc, location, standout moment, outcome, ranking explanation, and an embedded English-dub video. Goku vs. Kefla takes the number-one spot.**
+
+Time spent: **13** hours
 
 ## Required Features
 
-- [x] The web app uses HTML, CSS, and JavaScript without a frontend framework.
-- [x] The front page is functional and appropriately styled.
-- [x] The web app displays a title.
-- [x] The website displays at least five unique list items (six included).
-- [x] Each item displays at least three attributes: rank, title, story arc/movie, format, description, and spotlight.
-- [x] Each list item has its own corresponding page.
-- [x] Clicking an item opens a detailed view with every stored field, including the ID, slug, source reference, and outcome.
-- [x] Undefined routes serve an appropriate page with HTTP status 404.
-- [x] The webpage uses Pico CSS, installed and served locally.
+The following **required** functionality is completed:
 
-## Stretch Features
+- [x] **The web app uses only HTML, CSS, and JavaScript without a frontend framework**
+- [x] **The web app displays a title**
+- [x] **The web app displays at least five unique list items, each with at least three displayed attributes (such as title, text, and image)**
+- [x] **The user can click on each item in the list to see a detailed view of it, including all database fields**
+  - [x] **Each detail view should be a unique endpoint, such as `localhost:3000/fights/goku-vs-kefla` and `localhost:3000/fights/gogeta-vs-broly`**
+  - [ ] *Note: When showing this feature in the video walkthrough, please show the unique URL for each detailed view. We will not be able to give points if we cannot see the implementation.*
+- [x] **The web app serves an appropriate 404 page when no matching route is defined**
+- [x] **The web app is styled using Picocss**
 
-- [x] Items are displayed as responsive cards with hover and keyboard-focus states.
+The following **optional** features are implemented:
+
+- [x] The web app displays items in a unique format, such as cards rather than lists or animated list items
+
+The following **additional** features are implemented:
+
+- [x] Fight snapshots appear on the ranking cards and detail pages, with image sources credited.
+- [x] English-dub fight videos play inside responsive embedded players.
+- [x] The layout adapts to desktop and mobile screens.
+- [x] Keyboard navigation includes visible focus states and a skip-to-content link.
+- [x] Failed data requests display a retry button.
+- [x] The previous Vegeta vs. Toppo URL redirects to the renamed Vegeta vs. Top page.
+- [x] The app uses a custom Dragon Ball-inspired logo and browser icon.
 
 ## Video Walkthrough
 
-![Walkthrough of the ranking, fight details, and custom 404](docs/walkthrough.gif)
+Here's a walkthrough of implemented required features:
 
-## Run locally
+<img src="docs/walkthrough.gif" title="Video Walkthrough" width="960" alt="Walkthrough of fight cards, a detail page, and the custom 404 page" />
 
-Install Node.js 20 or newer. Open a terminal in this project folder:
+GIF created with **Playwright browser screenshots and Python Pillow**.
 
-```sh
-npm install
-npm start
-```
+**Before submission:** The GIF above is an earlier preview. It does not include the latest logo and cover selections, and it does not show the browser address bar. Replace it with an updated recording in Edge showing all six unique detail URLs, then check the walkthrough note above. Save the replacement as `docs/walkthrough.gif`.
 
-Open http://localhost:3000. During development, use `npm run dev` to restart the server automatically after edits. Set the `PORT` environment variable if port 3000 is already in use.
+Suggested recording sequence:
 
-Pico CSS is served locally. Fight snapshots load from Toei Animation and YouTube; embedded YouTube videos require internet access. Videos play inside their detail pages using YouTube embeds. English-dub uploads were selected, and actual in-page playback was checked in the Codex browser on localhost. Some videos are highlights or compilations rather than entire fights. Remote video availability can change.
+1. Show the home page title and all six fight cards.
+2. Click through each fight with the address bar visible:
+   - `http://localhost:3000/fights/goku-vs-kefla`
+   - `http://localhost:3000/fights/goku-vs-jiren`
+   - `http://localhost:3000/fights/gogeta-vs-broly`
+   - `http://localhost:3000/fights/universe-7-vs-jiren`
+   - `http://localhost:3000/fights/vegeta-vs-top`
+   - `http://localhost:3000/fights/vegito-vs-fused-zamasu`
+3. Scroll through one detail page to show its attributes, image, and video player.
+4. Visit `http://localhost:3000/not-a-fight` to show the custom 404 page, then return home.
 
-## Project structure
+## Notes
 
-- `server.js` starts the Express server.
-- `app.js` defines page routes, API routes, static assets, and 404 handling.
-- `data/fights.js` holds the six records with a shared structure, ready for a Unit 2 database.
-- `pages/` contains static HTML shells and the custom 404 page.
-- `public/app.js` fetches data and renders it using vanilla DOM methods.
-- `public/styles.css` customizes Pico CSS and handles responsive layouts.
-- `test/routes.test.js` checks page routes, the API, assets, and 404 responses.
-- `docs/` contains desktop/mobile screenshots and the GIF walkthrough.
+The backend uses Express to serve static HTML pages, public assets, and JSON endpoints. Fight records currently live in a JavaScript array with shared fields; a database is planned for Unit 2.
 
-## Routes
+A challenge was finding English-dub videos that permit embedded playback. The selected videos were observed playing inside localhost pages, and playback also works in Edge. The in-app preview browser has intermittently displayed blank players. These are third-party streams, so internet access and continued uploader availability are required; some clips show highlights rather than complete fights.
 
-| Route | Purpose |
-| --- | --- |
-| `/` | Ranked list of six fights |
-| `/fights/:slug` | Details for a known fight |
-| `/api/fights` | All fight records as JSON |
-| `/api/fights/:slug` | One fight record as JSON |
-| Any unmatched route | Custom 404 page (unknown API routes return JSON with status 404) |
+The ranking is subjective and detail pages contain spoilers. Dragon Ball characters, scene images, and videos belong to their respective owners. The license below covers original project code, not third-party media.
 
-Example: `/fights/goku-vs-jiren`.
+Setup commands, route descriptions, and development details are in [SETUP.md](SETUP.md). Run `npm install`, then `npm start`, and open `http://localhost:3000`. Run `npm test` for route, API, asset, and 404 checks.
 
-## Data and customization
+## License
 
-Edit `data/fights.js` to change the ranking or descriptions. Every record uses the same fields: `id`, `slug`, `rank`, `title`, `fighters`, `arc`, `format`, `location`, `spotlight`, `description`, `standoutMoment`, `whyItRanks`, `outcome`, `source`, `coverImage`, `coverAlt`, `coverSource`, `videoId`, `videoChannel`, and `videoLabel`.
+Copyright 2026 Brian Ingram
 
-The app currently stores data in a JavaScript array; it does not claim to have a database. The browser loads that data through Express. DOM text is inserted with `textContent` rather than interpreted as HTML.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
-## Checks
+> http://www.apache.org/licenses/LICENSE-2.0
 
-```sh
-npm test
-```
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
-Also verified in a real Chromium browser: all six rendered cards and detail pages, every detail field, back navigation, 404 recovery, mobile overflow at 390px, data-fetch failure/retry, and absence of JavaScript errors.
-
-## Notes and submission
-
-- The ranking and commentary are subjective fan opinions. Detail pages contain story spoilers.
-- This is an unofficial educational project. Dragon Ball and its characters belong to their respective owners.
-- The pasted assignment did not include the actual course README template or its link. This README includes a checked feature list and recorded walkthrough; transfer these into the exact course template before submission if its headings differ.
-- Review and personalize the ranking and explanations before submitting. Follow your course’s AI-use disclosure rules.
-- Submit your repository link and walkthrough through the course portal; this project has not been uploaded or submitted for you.
-
-## References
-
-- [Express static files](https://expressjs.com/en/starter/static-files/)
-- [Pico CSS documentation](https://picocss.com/docs)
-- [Dragon Ball Super episode summaries](https://en.wikipedia.org/wiki/List_of_Dragon_Ball_Super_episodes)
-- [Dragon Ball Super: Broly plot](https://en.wikipedia.org/wiki/Dragon_Ball_Super:_Broly)
-
-Fight commentary is original; story references are linked on each detail page.
-
-## Fight media
-
-Each detail page credits its cover image and video uploader. Four covers are episode stills from Toei Animation. The Goku vs. Jiren cover is the selected J1 still from RPP; the Gogeta vs. Broly cover is a user-supplied image stored locally in public/images. Media remains hosted by the original providers. The old `/fights/vegeta-vs-toppo` URL redirects to `/fights/vegeta-vs-top`.
-
-- [x] A fight snapshot appears on each card and detail page.
-- [x] Every detail page has a responsive English-dub video player with in-page playback.
-- [x] Goku vs. Kefla is ranked first, and Top uses the requested name.
-
-### English-dub playback update
-
-All six embedded videos were started and observed playing on localhost. Embed configuration includes the actual localhost origin, an explicit referrer policy, inline playback, and immediate player loading. The app-level external-watch link and fallback instruction were removed. YouTube still supplies its own player controls and branding. Covers are unchanged.
