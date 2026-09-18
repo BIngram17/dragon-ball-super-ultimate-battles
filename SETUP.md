@@ -9,7 +9,7 @@ npm start
 
 Open http://localhost:3000. During development, use `npm run dev` to restart the server automatically after edits. Set the `PORT` environment variable if port 3000 is already in use.
 
-Pico CSS is served locally. Fight snapshots load from Toei Animation and YouTube; embedded YouTube videos require internet access. Videos play inside their detail pages using YouTube embeds. English-dub uploads were selected, and actual in-page playback was checked in the Codex browser on localhost. Some videos are highlights or compilations rather than entire fights. Remote video availability can change.
+Pico CSS is served locally. Fight snapshots load from Toei Animation and YouTube; embedded YouTube videos require internet access. Videos play inside their detail pages using YouTube embeds. English-dub uploads were selected, and actual in-page playback was checked on localhost. Some videos are highlights or compilations rather than entire fights. Remote video availability can change.
 
 ## Project structure
 

@@ -41,7 +41,7 @@ Here's a walkthrough of implemented required features:
 
 GIF created with **Microsoft Edge window captures and Python Pillow**.
 
-The walkthrough shows the current logo and cover images, all six fight cards, every unique detail URL in the browser address bar, the embedded English-dub player, detailed fight attributes, and the custom 404 page with navigation back home.
+The walkthrough shows the current logo and cover images, all six fight cards, every unique detail URL in the browser address bar, the embedded English-dub player, detailed fight attributes, and the custom 404 page. The pointer is outside the recorded area.
 
 ## Notes
 
