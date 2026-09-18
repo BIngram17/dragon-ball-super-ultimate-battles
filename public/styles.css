@@ -1,0 +1,89 @@
+
+:root {
+  --pico-font-family: 'Segoe UI', Arial, sans-serif;
+  --pico-background-color: #0c1018;
+  --pico-color: #b8c1ce;
+  --pico-h1-color: #f3f5fa;
+  --pico-h2-color: #f3f5fa;
+  --pico-h3-color: #f3f5fa;
+  --pico-primary: #ff9b54;
+  --pico-primary-background: #ff8a38;
+  --pico-primary-hover-background: #ffab70;
+  --pico-primary-inverse: #10141d;
+  --pico-card-background-color: #141c28;
+  --pico-muted-color: #a0adbf;
+  --pico-border-radius: 3px;
+  --pico-font-size: 100%;
+}
+body { margin: 0; }
+.container { max-width: 1180px; padding-inline: 28px; }
+a { text-underline-offset: .25em; }
+a:focus-visible, button:focus-visible { outline: 3px solid #9ed5ff; outline-offset: 6px; }
+.site-header { display: flex; align-items: center; justify-content: space-between; min-height: 94px; border-bottom: 1px solid #283240; gap: 1rem; }
+.brand { display: flex; gap: 10px; align-items: center; font-weight: 900; font-size: 1.1rem; letter-spacing: .045em; color: #f3f5fa; text-decoration: none; }
+.brand-mark { color: #0c1018; background: #ff8a38; padding: 7px 8px; font-style: italic; letter-spacing: -.08em; }
+.brand-dot { color: #ff8a38; margin-left: -8px; }
+.header-note, .eyebrow, .section-heading span { font-size: .75rem; font-weight: 700; letter-spacing: .12em; }
+.header-note { color: #a0adbf; }
+.intro { padding: 54px 0 34px; margin: 0; }
+.eyebrow { color: #ff9b54; margin-bottom: 18px; }
+.intro h1 { font-size: clamp(3.2rem, 7.5vw, 6.3rem); font-weight: 950; line-height: .98; letter-spacing: -.065em; margin-bottom: 25px; }
+.intro h1 span { color: #ff8a38; }
+.intro-bottom { display: flex; justify-content: space-between; gap: 24px; align-items: end; }
+.intro-bottom p { margin: 0; line-height: 1.7; }
+.spoiler-note { text-align: right; font-size: .875rem; flex-shrink: 0; }
+.spoiler-note strong { color: #ffba88; font-weight: 500; }
+.section-heading { border-top: 1px solid #283240; padding: 23px 0; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.section-heading h2 { font-size: 1.1rem; margin: 0; }
+.section-heading span { color: #a0adbf; }
+.fight-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.fight-card { --accent: #7fbfff; display: flex; flex-direction: column; position: relative; margin: 0; padding: 23px; border: 1px solid #2b384a; border-top: 3px solid var(--accent); box-shadow: none; transition: border-color .16s, transform .16s; }
+.card-1, .card-4 { --accent: #ff9b54; }
+.card-3, .card-6 { --accent: #b5a2ff; }
+.fight-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+.fight-card:focus-within { outline: 3px solid #9ed5ff; outline-offset: 3px; }
+.card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; }
+.rank { color: var(--accent); font-size: 3.9rem; font-weight: 900; font-style: italic; line-height: 1; letter-spacing: -.075em; }
+.format { color: #d2dbea; font-size: .75rem; border: 1px solid #455367; padding: 3px 9px; text-transform: uppercase; letter-spacing: .07em; }
+.card-arc { font-size: .75rem; text-transform: uppercase; letter-spacing: .07em; color: #a5b5cb; margin: 0 0 10px; }
+.fight-card h3 { font-size: 1.55rem; line-height: 1.17; letter-spacing: -.025em; margin-bottom: 15px; }
+.fight-link { color: #f3f5fa; text-decoration: none; }
+.fight-link::after { content: ''; position: absolute; inset: 0; }
+.fight-link:focus-visible { outline: none; }
+.card-description { font-size: 1rem; line-height: 1.6; margin-bottom: 25px; }
+.card-bottom { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #2b384a; padding-top: 17px; margin-top: auto; gap: 12px; }
+.spotlight { color: var(--accent); font-size: .875rem; font-weight: 600; }
+.card-arrow { font-size: 1.4rem; color: #f3f5fa; }
+.site-footer { margin-top: 64px; padding-top: 25px; padding-bottom: 28px; border-top: 1px solid #283240; display: flex; justify-content: space-between; gap: 16px; font-size: .75rem; color: #a0adbf; }
+.detail-main { padding-top: 32px; }
+.back-link { display: inline-block; font-size: .9rem; margin-bottom: 30px; }
+.detail-hero { padding: 24px 0 38px; border-bottom: 1px solid #2b384a; }
+.detail-hero h1 { font-size: clamp(2.5rem, 6vw, 4.9rem); line-height: 1.06; letter-spacing: -.05em; max-width: 1000px; }
+.detail-description { font-size: 1.2rem; max-width: 760px; margin: 0; }
+.detail-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px; margin: 40px 0 24px; }
+.fight-story h2 { font-size: 1.3rem; border-left: 3px solid #ff8a38; padding-left: 15px; }
+.fight-story p { line-height: 1.8; }
+.fight-story section { margin-bottom: 32px; }
+.facts-panel { padding: 25px; box-shadow: none; border: 1px solid #2b384a; align-self: start; }
+.facts-panel h2 { font-size: 1.2rem; }
+.facts { margin-bottom: 20px; }
+.facts div { padding: 11px 0; border-bottom: 1px solid #2b384a; }
+.facts dt { color: #a0adbf; font-size: .8rem; margin-bottom: 4px; }
+.facts dd { margin: 0; color: #e4eaf3; overflow-wrap: anywhere; }
+.source-link { font-size: .875rem; }
+.not-found { padding-block: 70px; }
+.error-code { color: #ff8a38; font-size: clamp(6rem, 20vw, 12rem); font-weight: 900; line-height: 1; letter-spacing: -.08em; margin-bottom: 24px; }
+.not-found h1 { font-size: 2.5rem; }
+.not-found [role=button] { margin-top: 20px; }
+.skip-link { position: absolute; top: -100px; left: 20px; padding: 10px; background: #141c28; z-index: 2; }
+.skip-link:focus { top: 10px; }
+.retry { display: inline-block; width: auto; margin: 0; padding: .35rem .75rem; }
+@media (max-width: 900px) { .fight-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .detail-grid { gap: 28px; } }
+@media (max-width: 600px) {
+  .container { padding-inline: 20px; } .site-header { min-height: 78px; } .header-note { display: none; }
+  .intro { padding-top: 36px; } .intro-bottom { display: block; } .spoiler-note { text-align: left; margin-top: 18px !important; }
+  .fight-grid, .detail-grid { grid-template-columns: 1fr; } .section-heading span { font-size: .7rem; letter-spacing: .04em; }
+  .site-footer { flex-direction: column; } .detail-grid { gap: 8px; } .detail-hero { padding-top: 8px; }
+}
+@media (prefers-reduced-motion: reduce) { .fight-card { transition: none; } .fight-card:hover { transform: none; } }
+

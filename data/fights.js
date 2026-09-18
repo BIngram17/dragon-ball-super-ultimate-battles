@@ -1,0 +1,63 @@
+// Shared fields keep these records ready for a database in Unit 2.
+export const fights = [
+  {
+    id: 1, slug: 'goku-vs-jiren', rank: 1, title: 'Goku vs. Jiren',
+    fighters: ['Goku', 'Jiren'], arc: 'Tournament of Power', format: 'Series',
+    location: 'World of Void', spotlight: 'Ultra Instinct',
+    description: 'A quiet, immovable wall meets a Saiyan who refuses to stop growing. This is Super at its most electric.',
+    standoutMoment: 'Goku reaches the silver-haired Ultra Instinct form, turning a desperate struggle into a breathtaking exchange.',
+    whyItRanks: 'The contrast does the work: Jiren is pure control, while Goku keeps reaching beyond himself. The shifts in pace and the payoff to Ultra Instinct make this my number one.',
+    outcome: 'Ultra Instinct takes a heavy toll on Goku before he can finish the fight. The tournament is ultimately decided by a final team effort.',
+    source: 'https://en.wikipedia.org/wiki/List_of_Dragon_Ball_Super_episodes'
+  },
+  {
+    id: 2, slug: 'gogeta-vs-broly', rank: 2, title: 'Gogeta vs. Broly',
+    fighters: ['Gogeta', 'Broly'], arc: 'Dragon Ball Super: Broly', format: 'Movie',
+    location: 'Earth', spotlight: 'Super Saiyan Blue',
+    description: 'Fusion precision collides with overwhelming Saiyan power in a movie-sized spectacle.',
+    standoutMoment: 'Gogeta turns Super Saiyan Blue and takes command of a battle that seems to tear through reality itself.',
+    whyItRanks: 'Its animation, momentum, and scale are hard to beat. Broly brings raw emotion; Gogeta brings effortless confidence. Every exchange feels bigger than the last.',
+    outcome: 'Gogeta overwhelms Broly, but Cheelai wishes Broly back to Vampa before the final attack can land.',
+    source: 'https://en.wikipedia.org/wiki/Dragon_Ball_Super:_Broly'
+  },
+  {
+    id: 3, slug: 'goku-vs-kefla', rank: 3, title: 'Goku vs. Kefla',
+    fighters: ['Goku', 'Kefla'], arc: 'Tournament of Power', format: 'Series',
+    location: 'World of Void', spotlight: 'Instinct meets fusion',
+    description: 'Running on fumes, Goku faces a fusion whose explosive energy fills the entire arena.',
+    standoutMoment: 'Goku slides along Kefla’s energy beam with a charged Kamehameha, closing the distance for a point-blank finish.',
+    whyItRanks: 'Few finishes are this inventive. The fight turns Goku’s exhaustion into tension and rewards it with one perfectly timed, unforgettable counterattack.',
+    outcome: 'Goku eliminates Kefla from the Tournament of Power with a close-range Kamehameha.',
+    source: 'https://en.wikipedia.org/wiki/List_of_Dragon_Ball_Super_episodes'
+  },
+  {
+    id: 4, slug: 'universe-7-vs-jiren', rank: 4, title: 'Goku, Frieza & Android 17 vs. Jiren',
+    fighters: ['Goku', 'Frieza', 'Android 17', 'Jiren'], arc: 'Tournament of Power', format: 'Series',
+    location: 'World of Void', spotlight: 'The final team-up',
+    description: 'Old enemies become unlikely teammates when Universe 7 has one last chance to survive.',
+    standoutMoment: 'Goku and Frieza charge Jiren together while Android 17 supports them in the tournament’s final push.',
+    whyItRanks: 'After all the transformations, teamwork becomes the deciding factor. Goku and Frieza trusting each other for a single shared goal gives the finale its emotional punch.',
+    outcome: 'Goku and Frieza take Jiren out of the arena with them. Android 17 remains and wins the tournament for Universe 7.',
+    source: 'https://en.wikipedia.org/wiki/List_of_Dragon_Ball_Super_episodes'
+  },
+  {
+    id: 5, slug: 'vegeta-vs-toppo', rank: 5, title: 'Vegeta vs. Toppo',
+    fighters: ['Vegeta', 'Toppo'], arc: 'Tournament of Power', format: 'Series',
+    location: 'World of Void', spotlight: 'Saiyan pride',
+    description: 'Vegeta stands his ground against destruction energy with everything he refuses to give up.',
+    standoutMoment: 'Vegeta unleashes a massive explosion, echoing an earlier sacrifice while showing how far he has come.',
+    whyItRanks: 'This is a character moment disguised as a power struggle. Vegeta’s commitments to his family and his promises become the heart of the fight.',
+    outcome: 'Vegeta defeats and eliminates Toppo, surviving his own explosive attack.',
+    source: 'https://en.wikipedia.org/wiki/List_of_Dragon_Ball_Super_episodes'
+  },
+  {
+    id: 6, slug: 'vegito-vs-fused-zamasu', rank: 6, title: 'Vegito vs. Fused Zamasu',
+    fighters: ['Vegito', 'Fused Zamasu'], arc: 'Future Trunks Saga', format: 'Series',
+    location: 'Future Earth', spotlight: 'Vegito Blue',
+    description: 'A familiar fusion returns with godly power and just enough swagger to challenge a self-proclaimed deity.',
+    standoutMoment: 'Vegito Blue fires the Final Kamehameha in a clash that combines Goku and Vegeta’s signature attacks.',
+    whyItRanks: 'The return of Vegito is pure excitement. His confidence and combination attacks make this a memorable burst of action, even if the fusion ends sooner than hoped.',
+    outcome: 'Vegito’s intense power use ends the fusion early. Goku and Vegeta separate before they can settle the fight.',
+    source: 'https://en.wikipedia.org/wiki/List_of_Dragon_Ball_Super_episodes'
+  }
+];
