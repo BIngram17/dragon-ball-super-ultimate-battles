@@ -33,7 +33,7 @@ npm start
 
 Open http://localhost:3000. During development, use `npm run dev` to restart the server automatically after edits. Set the `PORT` environment variable if port 3000 is already in use.
 
-Pico CSS is served locally. Fight snapshots load from Toei Animation and YouTube; embedded YouTube videos require internet access. Each video includes a direct YouTube link if embedding or regional availability prevents playback. Videos are labeled as highlights, clips, or previews; they are not all full fights.
+Pico CSS is served locally. Fight snapshots load from Toei Animation and YouTube; embedded YouTube videos require internet access. Videos play inside their detail pages using YouTube embeds. English-dub uploads were selected, and actual in-page playback was checked in the Codex browser on localhost. Some videos are highlights or compilations rather than entire fights. Remote video availability can change.
 
 ## Project structure
 
@@ -94,5 +94,9 @@ Fight commentary is original; story references are linked on each detail page.
 Each detail page credits its cover image and video uploader. Five covers are actual episode stills from Toei Animation’s episode pages; the Gogeta cover is a battle still from Bandai Namco’s official preview. Media remains hosted by the original providers. The old `/fights/vegeta-vs-toppo` URL redirects to `/fights/vegeta-vs-top`.
 
 - [x] A fight snapshot appears on each card and detail page.
-- [x] Every detail page has a responsive video player and direct playback link.
+- [x] Every detail page has a responsive English-dub video player with in-page playback.
 - [x] Goku vs. Kefla is ranked first, and Top uses the requested name.
+
+### English-dub playback update
+
+All six embedded videos were started and observed playing on localhost. Embed configuration includes the actual localhost origin, an explicit referrer policy, inline playback, and immediate player loading. The app-level external-watch link and fallback instruction were removed. YouTube still supplies its own player controls and branding. Covers are unchanged.

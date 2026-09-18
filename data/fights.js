@@ -21,9 +21,9 @@ export const fights = [
     "coverImage": "https://lineup.toei-anim.co.jp/upload/save_image/episode/7682/story_img_2.png",
     "coverAlt": "Goku dodges Kefla’s punch in the Tournament of Power.",
     "coverSource": "https://www.toei-anim.co.jp/tv/dragon_s/episode/summary/116/",
-    "videoId": "BO-jft5EVSE",
-    "videoChannel": "Crunchyroll",
-    "videoLabel": "Fight highlight"
+    "videoId": "LlHQk-RHr5g",
+    "videoChannel": "Pixxled",
+    "videoLabel": "English dub · Finishing clash"
   },
   {
     "id": 1,
@@ -46,9 +46,9 @@ export const fights = [
     "coverImage": "https://lineup.toei-anim.co.jp/upload/save_image/episode/10857/story_img_2.png",
     "coverAlt": "Ultra Instinct Goku launches an energy attack during his fight with Jiren.",
     "coverSource": "https://www.toei-anim.co.jp/tv/dragon_s/episode/summary/130/",
-    "videoId": "-FPxOLsnPwA",
-    "videoChannel": "Crunchyroll Dubs",
-    "videoLabel": "Official fight clip"
+    "videoId": "7RXHJmRjgRo",
+    "videoChannel": "Messiah LIVE",
+    "videoLabel": "English dub · Fight compilation"
   },
   {
     "id": 2,
@@ -71,9 +71,9 @@ export const fights = [
     "coverImage": "https://i.ytimg.com/vi/l3sl-Tn8hXc/hq2.jpg",
     "coverAlt": "Gogeta charges through the air during his battle with Broly.",
     "coverSource": "https://www.youtube.com/watch?v=l3sl-Tn8hXc",
-    "videoId": "l3sl-Tn8hXc",
-    "videoChannel": "Bandai Namco Entertainment",
-    "videoLabel": "Official battle preview"
+    "videoId": "TCMNybISYt0",
+    "videoChannel": "DBMythic",
+    "videoLabel": "English dub · Fight video"
   },
   {
     "id": 4,
@@ -98,9 +98,9 @@ export const fights = [
     "coverImage": "https://lineup.toei-anim.co.jp/upload/save_image/episode/10860/story_img_1.png",
     "coverAlt": "Goku and Android 17 attack together during the final battle against Jiren.",
     "coverSource": "https://www.toei-anim.co.jp/tv/dragon_s/episode/summary/131/",
-    "videoId": "tLvO-pvtn9E",
-    "videoChannel": "Animehaven",
-    "videoLabel": "Fight highlight"
+    "videoId": "9_dCF2Bl8OY",
+    "videoChannel": "Ultra Instinct Rosé Z",
+    "videoLabel": "English dub · Final team-up"
   },
   {
     "id": 5,
@@ -125,7 +125,7 @@ export const fights = [
     "coverSource": "https://www.toei-anim.co.jp/tv/dragon_s/episode/summary/126/",
     "videoId": "PDU65bHf8KQ",
     "videoChannel": "Anime Fighter",
-    "videoLabel": "Fight video · English dub"
+    "videoLabel": "English dub · Fight video"
   },
   {
     "id": 6,
@@ -148,8 +148,8 @@ export const fights = [
     "coverImage": "https://lineup.toei-anim.co.jp/upload/save_image/episode/4552/story_img_1.png",
     "coverAlt": "Vegito faces Fused Zamasu after Goku and Vegeta fuse.",
     "coverSource": "https://www.toei-anim.co.jp/tv/dragon_s/episode/summary/66/",
-    "videoId": "R_4F6-5d0mM",
-    "videoChannel": "Crunchyroll Dubs",
-    "videoLabel": "Official fight clip"
+    "videoId": "VX7gMt8Rg5I",
+    "videoChannel": "Deleted Channel of DB Rocks",
+    "videoLabel": "English dub · Fight video"
   }
 ];

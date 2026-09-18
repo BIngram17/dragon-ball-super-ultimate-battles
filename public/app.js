@@ -34,15 +34,15 @@ function renderVideo(fight) {
   const section = element('section', 'video-section');
   section.append(element('h2', '', 'Watch the fight'));
   const frame = element('iframe', 'fight-video');
-  frame.src = 'https://www.youtube-nocookie.com/embed/' + fight.videoId;
+  const parameters = new URLSearchParams({ origin: location.origin, playsinline: '1', hl: 'en', rel: '0' });
+  frame.src = 'https://www.youtube-nocookie.com/embed/' + fight.videoId + '?' + parameters;
   frame.title = fight.title + ' — ' + fight.videoLabel;
-  frame.loading = 'lazy';
-  frame.allow = 'accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+  frame.loading = 'eager';
+  frame.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen';
   frame.allowFullscreen = true;
   frame.referrerPolicy = 'strict-origin-when-cross-origin';
-  const caption = element('p', 'video-caption', fight.videoLabel + ' · ' + fight.videoChannel + ' · ');
-  caption.append(link('https://www.youtube.com/watch?v=' + fight.videoId, 'Open on YouTube ↗', 'video-link'));
-  section.append(frame, caption, element('p', 'video-note', 'If playback is unavailable here, open the video on YouTube.'));
+  const caption = element('p', 'video-caption', fight.videoLabel + ' · ' + fight.videoChannel);
+  section.append(frame, caption);
   return section;
 }
 
@@ -110,3 +110,4 @@ async function load() {
   }
 }
 load();
+
