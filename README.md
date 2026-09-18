@@ -15,7 +15,7 @@ The following **required** functionality is completed:
 - [x] **The web app displays at least five unique list items, each with at least three displayed attributes (such as title, text, and image)**
 - [x] **The user can click on each item in the list to see a detailed view of it, including all database fields**
   - [x] **Each detail view should be a unique endpoint, such as `localhost:3000/fights/goku-vs-kefla` and `localhost:3000/fights/gogeta-vs-broly`**
-  - [ ] *Note: When showing this feature in the video walkthrough, please show the unique URL for each detailed view. We will not be able to give points if we cannot see the implementation.*
+  - [x] *Note: When showing this feature in the video walkthrough, please show the unique URL for each detailed view. We will not be able to give points if we cannot see the implementation.*
 - [x] **The web app serves an appropriate 404 page when no matching route is defined**
 - [x] **The web app is styled using Picocss**
 
@@ -37,24 +37,11 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src="docs/walkthrough.gif" title="Video Walkthrough" width="960" alt="Walkthrough of fight cards, a detail page, and the custom 404 page" />
+<img src="docs/walkthrough.gif" title="Video Walkthrough" width="960" alt="Edge walkthrough showing all six fight cards and unique detail URLs, fight attributes, the embedded player, and the custom 404 page" />
 
-GIF created with **Playwright browser screenshots and Python Pillow**.
+GIF created with **Microsoft Edge window captures and Python Pillow**.
 
-**Before submission:** The GIF above is an earlier preview. It does not include the latest logo and cover selections, and it does not show the browser address bar. Replace it with an updated recording in Edge showing all six unique detail URLs, then check the walkthrough note above. Save the replacement as `docs/walkthrough.gif`.
-
-Suggested recording sequence:
-
-1. Show the home page title and all six fight cards.
-2. Click through each fight with the address bar visible:
-   - `http://localhost:3000/fights/goku-vs-kefla`
-   - `http://localhost:3000/fights/goku-vs-jiren`
-   - `http://localhost:3000/fights/gogeta-vs-broly`
-   - `http://localhost:3000/fights/universe-7-vs-jiren`
-   - `http://localhost:3000/fights/vegeta-vs-top`
-   - `http://localhost:3000/fights/vegito-vs-fused-zamasu`
-3. Scroll through one detail page to show its attributes, image, and video player.
-4. Visit `http://localhost:3000/not-a-fight` to show the custom 404 page, then return home.
+The walkthrough shows the current logo and cover images, all six fight cards, every unique detail URL in the browser address bar, the embedded English-dub player, detailed fight attributes, and the custom 404 page with navigation back home.
 
 ## Notes
 
