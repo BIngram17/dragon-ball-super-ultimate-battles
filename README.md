@@ -4,16 +4,16 @@ Submitted by: **Brian Ingram**
 
 About this web app: **A ranking of six Dragon Ball Super fights with scene snapshots, unique detail pages, and embedded English-dub videos. Project 2 moves the fight records into PostgreSQL and adds case-insensitive search by title, fighter, story arc, or format.**
 
-Time spent: **To be confirmed** hours
+Time spent: **8** hours
 
 ## Required Features
 
 The following **required** functionality is completed:
 
 - [x] **The web app uses only HTML, CSS, and JavaScript without a frontend framework**
-- [ ] **The web app is connected to a PostgreSQL database, with an appropriately structured database table for the list items**
-  - [ ] **NOTE: Your walkthrough added to the README must include a view of your Render dashboard demonstrating that your Postgres database is available**
-  - [ ] **NOTE: Your walkthrough added to the README must include a demonstration of your table contents. Use the psql command 'SELECT * FROM tablename;' to display your table contents.**
+- [x] **The web app is connected to a PostgreSQL database, with an appropriately structured database table for the list items**
+  - [x] **NOTE: Your walkthrough added to the README must include a view of your Render dashboard demonstrating that your Postgres database is available**
+  - [x] **NOTE: Your walkthrough added to the README must include a demonstration of your table contents. Use the psql command 'SELECT * FROM tablename;' to display your table contents.**
 
 The following **optional** features are implemented:
 
@@ -32,15 +32,17 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-**Project 2 recording pending:** The Render database must be resumed and connected, then the walkthrough must show its Available status and the real psql output from `SELECT * FROM fights;`, followed by the app and search. The existing [Project 1 GIF](docs/walkthrough.gif) is an earlier demonstration and does not supply the Project 2 database evidence.
+<img src="docs/project2-walkthrough.gif" title="Video Walkthrough" width="1000" alt="Render PostgreSQL Available status, actual psql SELECT * FROM fights output for all six records, and database-backed fight search and detail pages" />
 
-GIF tool: Microsoft Edge window captures and Python Pillow (Project 1). Project 2 recording tool will be listed when captured.
+GIF created with **browser screenshots and Python Pillow**. The database portion displays the actual output captured from the `psql` client running `SELECT * FROM fights;` against Render, formatted as a readable transcript. The [full query output](docs/postgres-table.txt) and [Render dashboard screenshot](docs/render-database.png) are also included.
+
+[Direct GIF link](https://raw.githubusercontent.com/BIngram17/dragon-ball-super-ultimate-battles/main/docs/project2-walkthrough.gif)
 
 ## Notes
 
 The app now queries PostgreSQL through an Express backend using `pg`. The six original records are seed data only; normal runtime routes never read the seed array. The schema stores the fighters as a PostgreSQL text array and enforces unique ranks and slugs.
 
-Automated tests execute the schema and SQL against isolated embedded PostgreSQL using PGlite. They verify repeat seeding, attribute searches, literal wildcard handling, live database edits through the API, valid routes, and safe 404/503 responses. The live Render connection is pending; local tests do not fulfill that requirement.
+Automated tests execute the schema and SQL against isolated embedded PostgreSQL using PGlite. They verify repeat seeding, attribute searches, literal wildcard handling, live database edits through the API, valid routes, and safe 404/503 responses. The live Render PostgreSQL 18 connection was also verified: the table contains all six records, the app API returns them in rank order, and the live movie filter returns Gogeta vs. Broly. The free Render database expires October 23, 2026.
 
 See [SETUP.md](SETUP.md) for database setup and verification. The [Project 1 README](docs/project1-readme.md) preserves the earlier submission.
 

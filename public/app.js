@@ -94,7 +94,7 @@ async function load() {
   pendingRequest = controller;
   status.hidden = false;
   status.textContent = 'Loading the matchups…';
-  if (list) list.replaceChildren();
+  if (list) list.setAttribute('aria-busy', 'true');
   if (detail) detail.replaceChildren();
   try {
     const slug = location.pathname.split('/').filter(Boolean)[1];
@@ -104,11 +104,14 @@ async function load() {
     const data = await response.json();
     if (controller.signal.aborted) return;
     if (list) {
+      list.replaceChildren();
       data.forEach(fight => list.append(renderCard(fight)));
+      list.setAttribute('aria-busy', 'false');
       status.textContent = data.length ? `${data.length} fight${data.length === 1 ? '' : 's'} found.` : 'No fights match your search. Try another term or clear the filters.';
     } else { renderDetail(data); status.hidden = true; }
   } catch (error) {
     if (error.name === 'AbortError') return;
+    if (list) { list.replaceChildren(); list.setAttribute('aria-busy', 'false'); }
     status.replaceChildren(element('span', '', 'The fight data couldn’t load. '));
     const retry = element('button', 'retry', 'Try again');
     retry.type = 'button';

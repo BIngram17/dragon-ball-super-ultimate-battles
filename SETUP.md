@@ -45,7 +45,7 @@ For the assignment GIF, show the Render database status as **Available**. In psq
 SELECT * FROM fights;
 ```
 
-Show the query and table contents, then demonstrate the ranking, search, and detail pages. Keep passwords and connection URLs off-screen. `docs/walkthrough.gif` is still the earlier Project 1 recording until the new database evidence is captured.
+Show the query and table contents, then demonstrate the ranking, search, and detail pages. Keep passwords and connection URLs off-screen. `docs/project2-walkthrough.gif` includes the Render Available status, actual psql query transcript, and the live app. `docs/walkthrough.gif` preserves the Project 1 recording. The configured free Render database expires October 23, 2026.
 
 ## Media
 
