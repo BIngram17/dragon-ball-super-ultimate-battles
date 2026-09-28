@@ -18,6 +18,11 @@
       <div class="intro-bottom"><p>The best Dragon Ball Super fights, ranked.<br>Big transformations. Bigger stakes. Unforgettable finishes.</p><p class="spoiler-note">Series + Broly movie<br><strong>Spoilers ahead</strong></p></div>
     </section>
     <section class="rankings" aria-labelledby="rankings-title"><div class="section-heading"><h2 id="rankings-title">The ranking</h2><span>01 — 06 / PERSONAL PICKS</span></div>
+      <form id="search-form" class="search-form" role="search">
+        <label>Search by<select id="search-attribute" name="attribute"><option value="title">Fight title</option><option value="fighter">Fighter</option><option value="arc">Story arc</option><option value="format">Series or movie</option></select></label>
+        <label>Find a fight<input id="search-query" name="q" type="search" maxlength="120" placeholder="Try Goku, Broly, or Tournament of Power"></label>
+        <button type="submit">Search</button><button type="reset" class="secondary">Clear</button>
+      </form>
       <p id="status" role="status" aria-live="polite">Loading the matchups…</p>
       <div id="fight-list" class="fight-grid"></div>
       <noscript><p>Please enable JavaScript to load the fight list.</p></noscript>

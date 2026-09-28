@@ -87,16 +87,28 @@ function renderDetail(fight) {
   detail.append(hero, figure, renderVideo(fight), body, link('/', '← Explore all six fights', 'back-link'));
 }
 
+let pendingRequest;
 async function load() {
+  pendingRequest?.abort();
+  const controller = new AbortController();
+  pendingRequest = controller;
+  status.hidden = false;
+  status.textContent = 'Loading the matchups…';
+  if (list) list.replaceChildren();
+  if (detail) detail.replaceChildren();
   try {
     const slug = location.pathname.split('/').filter(Boolean)[1];
-    const response = await fetch(list ? '/api/fights' : `/api/fights/${encodeURIComponent(slug)}`);
+    const params = new URLSearchParams(location.search);
+    const response = await fetch(list ? `/api/fights?${params}` : `/api/fights/${encodeURIComponent(slug)}`, { signal: controller.signal });
     if (!response.ok) throw new Error('Unable to load fights');
     const data = await response.json();
-    if (list) data.forEach(fight => list.append(renderCard(fight)));
-    else renderDetail(data);
-    status.hidden = true;
-  } catch {
+    if (controller.signal.aborted) return;
+    if (list) {
+      data.forEach(fight => list.append(renderCard(fight)));
+      status.textContent = data.length ? `${data.length} fight${data.length === 1 ? '' : 's'} found.` : 'No fights match your search. Try another term or clear the filters.';
+    } else { renderDetail(data); status.hidden = true; }
+  } catch (error) {
+    if (error.name === 'AbortError') return;
     status.replaceChildren(element('span', '', 'The fight data couldn’t load. '));
     const retry = element('button', 'retry', 'Try again');
     retry.type = 'button';
@@ -108,6 +120,29 @@ async function load() {
     });
     status.append(retry);
   }
+}
+const searchForm = document.querySelector('#search-form');
+function restoreSearch() {
+  const params = new URLSearchParams(location.search);
+  searchForm.elements.q.value = params.get('q') || '';
+  const attribute = params.get('attribute');
+  searchForm.elements.attribute.value = ['title', 'fighter', 'arc', 'format'].includes(attribute) ? attribute : 'title';
+}
+if (searchForm) {
+  restoreSearch();
+  searchForm.addEventListener('submit', event => {
+    event.preventDefault();
+    const params = new URLSearchParams({ attribute: searchForm.elements.attribute.value, q: searchForm.elements.q.value.trim() });
+    history.pushState(null, '', `/?${params}`);
+    load();
+  });
+  searchForm.addEventListener('reset', event => {
+    event.preventDefault();
+    history.pushState(null, '', '/');
+    restoreSearch();
+    load();
+  });
+  addEventListener('popstate', () => { restoreSearch(); load(); });
 }
 load();
 

@@ -101,3 +101,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #9ed5ff; outline-offs
 .video-caption { margin: 14px 0 6px; }
 .video-note { margin: 0; }
 .image-unavailable { min-height: 160px; display: grid; place-content: center; padding: 20px; color: #b8c1ce; }
+.search-form { display: grid; grid-template-columns: 180px 1fr auto auto; gap: 16px; align-items: end; margin-bottom: 24px; }
+.search-form label { margin: 0; font-size: .875rem; }
+.search-form input, .search-form select, .search-form button { margin-bottom: 0; }
+@media (max-width: 700px) { .search-form { grid-template-columns: 1fr 1fr; } .search-form label { grid-column: 1 / -1; } }

@@ -1,4 +1,4 @@
-// Shared fields keep these records ready for a database in Unit 2.
+// Seed records only. Runtime routes read from PostgreSQL.
 export const fights = [
   {
     "id": 3,

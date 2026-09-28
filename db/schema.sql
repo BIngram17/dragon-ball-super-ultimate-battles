@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS fights (
+  id INTEGER PRIMARY KEY CHECK (id > 0),
+  slug TEXT NOT NULL UNIQUE CHECK (slug ~ '^[a-z0-9]+(-[a-z0-9]+)*$'),
+  rank INTEGER NOT NULL UNIQUE CHECK (rank > 0),
+  title TEXT NOT NULL CHECK (length(trim(title)) > 0),
+  fighters TEXT[] NOT NULL CHECK (cardinality(fighters) > 0),
+  arc TEXT NOT NULL,
+  format TEXT NOT NULL CHECK (format IN ('Series', 'Movie')),
+  location TEXT NOT NULL,
+  spotlight TEXT NOT NULL,
+  description TEXT NOT NULL,
+  "standoutMoment" TEXT NOT NULL,
+  "whyItRanks" TEXT NOT NULL,
+  outcome TEXT NOT NULL,
+  source TEXT NOT NULL,
+  "coverImage" TEXT NOT NULL,
+  "coverAlt" TEXT NOT NULL,
+  "coverSource" TEXT NOT NULL,
+  "videoId" TEXT NOT NULL,
+  "videoChannel" TEXT NOT NULL,
+  "videoLabel" TEXT NOT NULL
+);

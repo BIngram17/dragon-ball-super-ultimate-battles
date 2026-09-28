@@ -1,57 +1,50 @@
-# WEB103 Project 1 - *Dragon Ball Super: Ultimate Battles*
+# WEB103 Project 2 - *Dragon Ball Super: Ultimate Battles*
 
 Submitted by: **Brian Ingram**
 
-About this web app: **Dragon Ball Super: Ultimate Battles is a fan-made ranking of six memorable fights from the series and Dragon Ball Super: Broly. Browse fight cards with scene snapshots, then open each fight’s own page to explore the fighters, story arc, location, standout moment, outcome, ranking explanation, and an embedded English-dub video. Goku vs. Kefla takes the number-one spot.**
+About this web app: **A ranking of six Dragon Ball Super fights with scene snapshots, unique detail pages, and embedded English-dub videos. Project 2 moves the fight records into PostgreSQL and adds case-insensitive search by title, fighter, story arc, or format.**
 
-Time spent: **13** hours
+Time spent: **To be confirmed** hours
 
 ## Required Features
 
 The following **required** functionality is completed:
 
 - [x] **The web app uses only HTML, CSS, and JavaScript without a frontend framework**
-- [x] **The web app displays a title**
-- [x] **The web app displays at least five unique list items, each with at least three displayed attributes (such as title, text, and image)**
-- [x] **The user can click on each item in the list to see a detailed view of it, including all database fields**
-  - [x] **Each detail view should be a unique endpoint, such as `localhost:3000/fights/goku-vs-kefla` and `localhost:3000/fights/gogeta-vs-broly`**
-  - [x] *Note: When showing this feature in the video walkthrough, please show the unique URL for each detailed view. We will not be able to give points if we cannot see the implementation.*
-- [x] **The web app serves an appropriate 404 page when no matching route is defined**
-- [x] **The web app is styled using Picocss**
+- [ ] **The web app is connected to a PostgreSQL database, with an appropriately structured database table for the list items**
+  - [ ] **NOTE: Your walkthrough added to the README must include a view of your Render dashboard demonstrating that your Postgres database is available**
+  - [ ] **NOTE: Your walkthrough added to the README must include a demonstration of your table contents. Use the psql command 'SELECT * FROM tablename;' to display your table contents.**
 
 The following **optional** features are implemented:
 
-- [x] The web app displays items in a unique format, such as cards rather than lists or animated list items
+- [x] The user can search for items by a specific attribute
 
 The following **additional** features are implemented:
 
-- [x] Fight snapshots appear on the ranking cards and detail pages, with image sources credited.
-- [x] English-dub fight videos play inside responsive embedded players.
-- [x] The layout adapts to desktop and mobile screens.
-- [x] Keyboard navigation includes visible focus states and a skip-to-content link.
-- [x] Failed data requests display a retry button.
-- [x] The previous Vegeta vs. Toppo URL redirects to the renamed Vegeta vs. Top page.
-- [x] The app uses a custom Dragon Ball-inspired logo and browser icon.
+- [x] Search supports fight title, fighter, story arc, and series/movie format.
+- [x] Search URLs can be bookmarked, and browser Back/Forward restores filters.
+- [x] Queries use SQL parameters, validated attributes, and literal search text.
+- [x] Schema and seed setup runs in a transaction and can be repeated without duplicating records.
+- [x] Database outages return HTTP 503 with a retry option instead of exposing connection details.
+- [x] Existing ranked cards, fight images, English-dub players, mobile layout, and custom 404 pages are retained.
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented required features:
 
-<img src="docs/walkthrough.gif" title="Video Walkthrough" width="960" alt="Edge walkthrough showing all six fight cards and unique detail URLs, fight attributes, the embedded player, and the custom 404 page" />
+**Project 2 recording pending:** The Render database must be resumed and connected, then the walkthrough must show its Available status and the real psql output from `SELECT * FROM fights;`, followed by the app and search. The existing [Project 1 GIF](docs/walkthrough.gif) is an earlier demonstration and does not supply the Project 2 database evidence.
 
-GIF created with **Microsoft Edge window captures and Python Pillow**.
-
-The walkthrough shows the current logo and cover images, all six fight cards, every unique detail URL in the browser address bar, the embedded English-dub player, detailed fight attributes, and the custom 404 page. The pointer is outside the recorded area.
+GIF tool: Microsoft Edge window captures and Python Pillow (Project 1). Project 2 recording tool will be listed when captured.
 
 ## Notes
 
-The backend uses Express to serve static HTML pages, public assets, and JSON endpoints. Fight records currently live in a JavaScript array with shared fields; a database is planned for Unit 2.
+The app now queries PostgreSQL through an Express backend using `pg`. The six original records are seed data only; normal runtime routes never read the seed array. The schema stores the fighters as a PostgreSQL text array and enforces unique ranks and slugs.
 
-A challenge was finding English-dub videos that permit embedded playback. The selected videos were observed playing inside localhost pages, and playback also works in Edge. The in-app preview browser has intermittently displayed blank players. These are third-party streams, so internet access and continued uploader availability are required; some clips show highlights rather than complete fights.
+Automated tests execute the schema and SQL against isolated embedded PostgreSQL using PGlite. They verify repeat seeding, attribute searches, literal wildcard handling, live database edits through the API, valid routes, and safe 404/503 responses. The live Render connection is pending; local tests do not fulfill that requirement.
 
-The ranking is subjective and detail pages contain spoilers. Dragon Ball characters, scene images, and videos belong to their respective owners. The license below covers original project code, not third-party media.
+See [SETUP.md](SETUP.md) for database setup and verification. The [Project 1 README](docs/project1-readme.md) preserves the earlier submission.
 
-Setup commands, route descriptions, and development details are in [SETUP.md](SETUP.md). Run `npm install`, then `npm start`, and open `http://localhost:3000`. Run `npm test` for route, API, asset, and 404 checks.
+Dragon Ball characters, images, and videos belong to their respective owners. The license below applies to original project code, not third-party media.
 
 ## License
 
